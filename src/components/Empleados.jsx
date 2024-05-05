@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 
-const Empleados = ({ page }) => {
+const Empleados = React.memo(({ page }) => {
 
   const [empleadosState, setEmpleadosState] = useState([])
 
   useEffect(() => {
     conseguirEmpleados(page)
-  }, [])
+  }, [page])
 
 
   const conseguirEmpleados = async page => {
@@ -17,6 +17,7 @@ const Empleados = ({ page }) => {
     const { data: empleados } = await peticion.json()
 
     setEmpleadosState(empleados)
+    console.log('Se ejecuto la peticòn Ajax')
   }
 
   console.log('Renderizado desde el componente de Empleados')
@@ -39,6 +40,6 @@ const Empleados = ({ page }) => {
       </ol>
     </div>
   )
-}
+})
 
 export default Empleados
