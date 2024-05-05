@@ -4,6 +4,7 @@ import Empleados from "./Empleados"
 const Gestion = () => {
 
   const [nombre, setNombre] = useState('')
+  const [pagina, setPagina] = useState(1)
 
   const asignarGestor = e => {
     setNombre(e.target.value)
@@ -22,7 +23,9 @@ const Gestion = () => {
 
       <h2>Listado de empleados:</h2>
       <p>Los usuarios son gestionados por: {nombre}, vienes de jsonplaceholder...</p>
-      <Empleados />
+      <button onClick={() => { setPagina(1) }}>Página 1</button>
+      <button onClick={() => { setPagina(2) }}>Página 2</button>
+      <Empleados page={pagina} />
     </div>
   )
 }
