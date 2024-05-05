@@ -1,9 +1,10 @@
+import Gestion from "./components/Gestion"
 
 const App = () => {
 
   return (
     <div>
-      <h2>From App</h2>
+      <Gestion />
     </div>
   )
 }
