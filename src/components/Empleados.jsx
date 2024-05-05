@@ -4,6 +4,11 @@ const Empleados = React.memo(({ page }) => {
 
   const [empleadosState, setEmpleadosState] = useState([])
 
+
+  useEffect(() => {
+    console.log('Renderizado desde el componente de Empleados')
+  }, [empleadosState])
+
   useEffect(() => {
     conseguirEmpleados(page)
   }, [page])
@@ -20,7 +25,7 @@ const Empleados = React.memo(({ page }) => {
     console.log('Se ejecuto la peticòn Ajax')
   }
 
-  console.log('Renderizado desde el componente de Empleados')
+
 
   return (
     <div>

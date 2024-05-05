@@ -6,11 +6,14 @@ const Gestion = () => {
   const [nombre, setNombre] = useState('')
   const [pagina, setPagina] = useState(1)
 
+  useEffect(()=> {
+    console.log('Renderizado desde el componente de Gestion')
+  }, [nombre, pagina])
+
   const asignarGestor = e => {
     setNombre(e.target.value)
   }
 
-  console.log('Renderizado desde el componente de Gestion')
 
   return (
     <div>
