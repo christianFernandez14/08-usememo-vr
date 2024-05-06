@@ -25,3 +25,7 @@ input[type="submit"] {
   text-transform: uppercase;
   border-radius: 5px;
 }
+
+button {
+  margin-left: 10px;
+}

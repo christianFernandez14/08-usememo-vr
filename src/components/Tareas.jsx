@@ -12,6 +12,15 @@ const Tareas = () => {
       ...tarea,
       e.target.descripcion.value
     ])
+  }
+
+  const borrarTarea = id => {
+
+    // Filtrar las tareas para borrar la que no quiero
+    let nuevas_tareas = tareas.filter((tarea, indice) => indice !== id)
+    
+    // Guardar el nuevo Estado de tareas  
+    setTareas(nuevas_tareas)
 
   }
 
@@ -33,9 +42,10 @@ const Tareas = () => {
       <h3>Lista de tareas agregadas</h3>
       <ol>
         {
-          tareas.map(tarea => (
-            <li key={tarea}>
+          tareas.map((tarea, indice) => (
+            <li key={indice}>
               {tarea}
+              <button onClick={() => borrarTarea(indice)}>x</button>
             </li>
           ))
         }
