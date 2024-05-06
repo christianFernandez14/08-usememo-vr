@@ -5,3 +5,8 @@ El uso del hook useMemo en el componente Empleados es una buena práctica para o
 Su sintaxis const nombreFuncion = useMemo (() => funcionQueLlevaLaCarga()), [dependencia])
 
 Se utiliza para que no haya problema de rendimientos.
+
+
+Trabajando con useCallback
+
+Está muy relacionado con el useMemo y la memorización, con la diferencia es que est Hook, nos permite memorizar funciones

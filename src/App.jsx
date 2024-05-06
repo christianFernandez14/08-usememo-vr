@@ -6,10 +6,10 @@ const App = () => {
   return (
     <div>
       {/* Ejercicios con el hook useMemo */}
-      <Tareas />
+      {/* <Tareas /> */}
 
       {/* Ejercicio con metodo memo para componentes */}
-      {/* <Gestion /> */}
+      <Gestion />
     </div>
   )
 }

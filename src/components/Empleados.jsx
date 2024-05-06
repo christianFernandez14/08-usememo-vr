@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-const Empleados = React.memo(({ page }) => {
+const Empleados = React.memo(({ page, mensaje }) => {
 
   const [empleadosState, setEmpleadosState] = useState([])
 
@@ -11,6 +11,7 @@ const Empleados = React.memo(({ page }) => {
 
   useEffect(() => {
     conseguirEmpleados(page)
+    mensaje()
   }, [page])
 
 
@@ -24,7 +25,6 @@ const Empleados = React.memo(({ page }) => {
     setEmpleadosState(empleados)
     console.log('Se ejecuto la peticòn Ajax')
   }
-
 
 
   return (

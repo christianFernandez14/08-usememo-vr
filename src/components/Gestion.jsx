@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Empleados from "./Empleados"
 
 const Gestion = () => {
@@ -6,7 +6,7 @@ const Gestion = () => {
   const [nombre, setNombre] = useState('')
   const [pagina, setPagina] = useState(1)
 
-  useEffect(()=> {
+  useEffect(() => {
     console.log('Renderizado desde el componente de Gestion')
   }, [nombre, pagina])
 
@@ -14,6 +14,9 @@ const Gestion = () => {
     setNombre(e.target.value)
   }
 
+  const mostrarMensaje = useCallback(() => {
+    console.log('Hola que tal, soy un mensaje desde el componente Gestión')
+  }, [pagina])
 
   return (
     <div>
@@ -28,7 +31,10 @@ const Gestion = () => {
       <p>Los usuarios son gestionados por: {nombre}, vienes de jsonplaceholder...</p>
       <button onClick={() => { setPagina(1) }}>Página 1</button>
       <button onClick={() => { setPagina(2) }}>Página 2</button>
-      <Empleados page={pagina} />
+      <Empleados
+        page={pagina}
+        mensaje={mostrarMensaje}
+      />
     </div>
   )
 }
